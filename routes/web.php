@@ -22,7 +22,7 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index');
-    Route::get('/create', 'CreateTicketController@index');
+    Route::resource('/create', 'CreateTicketController');
     Route::get('/ticket/{slug}', 'HomeController@show')->name('ticket.show');
     Route::get('/department/{slug}', 'HomeController@department')->name('department.show');
     Route::get('/logout', 'AuthController@logout');

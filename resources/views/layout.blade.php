@@ -52,7 +52,7 @@
 
 
                 <ul class="nav navbar-nav text-uppercase pull-right">
-                    <li><a href="/home" ></a></li>
+                    <li><a href="/home" >{{Auth::user()-> name}}</a></li>
                     <li><a href="/logout">Logout</a></li>
                    @else
                     <li><a href="/login">Login</a></li>

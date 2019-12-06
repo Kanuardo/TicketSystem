@@ -23,7 +23,7 @@ class TicketController extends Controller
     public function department($slug)
     {
         $department = Department::where('slug', $slug)->firstOrFail();
-        $tickets = $department->tickets()->where('status', 1)-> paginate(2);
+        $tickets = $department->tickets()-> paginate(2);
         $user= Auth::user();
         return view('admin.departments.list',
             ['tickets' => $tickets,

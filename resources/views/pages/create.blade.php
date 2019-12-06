@@ -14,31 +14,27 @@
                         <div class="col-md-6">
                          <div class="form-group">
                              <label for="exampleInputEmail1">Заголовок</label>
-                              <input type="text" class="form-control" id="exampleInputEmail1" name="title" value="{{old('title')}}}" placeholder="">
+                              <input type="text" class="form-control" id="exampleInputEmail1" name="title" value="{{old('title')}}" placeholder="">
                          </div>
                             <div class="form-group">
                              <label>Категория</label>
-                              <select class="form-control select2" style="width: 100%;">
-                                  <option selected="selected">Alabama</option>
-                                  <option>Alaska</option>
-                                  <option>California</option>
-                                  <option>Delaware</option>
-                                  <option>Tennessee</option>
-                                  <option>Texas</option>
-                                <option>Washington</option>
-                              </select>
-                            </div>
+                                {{Form::select('department_id',
+                                  $departments,
+                                  null,
+                                  ['class' => 'form-control select2'])
+                                                                  }}
+                              </div>
                         </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Полный текст</label>
-                            <textarea name="" id="" cols="30" rows="10" class="form-control" name="content"></textarea>
+                            <textarea id="" cols="30" rows="10" class="form-control" name="content"></textarea>
                         </div>
                     </div>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
-                    <button class="btn btn-default">Назад</button>
+
                     <button class="btn btn-success pull-right">Добавить</button>
                 </div>
                 <!-- /.box-footer-->

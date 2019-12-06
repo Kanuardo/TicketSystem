@@ -15,7 +15,7 @@ class DashboadController extends Controller
         $departments = Department::pluck('title', 'id')->all();
         $user= Auth::user();
 
-        $tickets = Tickets::where('status', 1)->paginate(3);
+        $tickets = Tickets::paginate(3);
 
 
         return view("admin.dashboard", [

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 
 class Tickets extends Model
@@ -13,7 +14,7 @@ class Tickets extends Model
     const IS_CLOSE = 1;
     const IS_OPEN = 0;
 
-    protected $fillable=['title', 'content'];
+    protected $fillable=['title', 'content', 'user_id'];
 
 
     public  function department(){
@@ -31,9 +32,6 @@ class Tickets extends Model
     public function comments3() {
         return $this->hasMany(Comment::class,'ticket_id')->limit(1)->orderBy('created_at','desc');
     }
-    public function com() {
-        return $this->hasMany(Comment::class,'ticket_id')->orderBy('created_at','desc');
-    }
     public function sluggable()
     {
         return [
@@ -46,7 +44,7 @@ class Tickets extends Model
     public static function add($fields){
         $ticket=new static;
         $ticket->fill($fields);
-        $ticket->user_id = 1;
+
         $ticket->save();
 
         return $ticket;
