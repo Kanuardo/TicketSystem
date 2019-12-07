@@ -21,7 +21,7 @@ Route::group(['middleware' => 'guest'], function () {
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/home', 'HomeController@index');
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/create', 'CreateTicketController');
     Route::get('/ticket/{slug}', 'HomeController@show')->name('ticket.show');
     Route::get('/department/{slug}', 'HomeController@department')->name('department.show');

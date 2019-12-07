@@ -3,6 +3,7 @@
     <div class="main-content">
         <!-- Main content -->
         <section class="container">
+        {{ Breadcrumbs::render('create') }}
         {{Form::open([
         'route'=>'create.store'
         ])}}

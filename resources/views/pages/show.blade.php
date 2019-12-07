@@ -2,6 +2,7 @@
 @section('content')
     <div class="main-content">
         <div class="container">
+            {{ Breadcrumbs::render('show') }}
             <div class="row">
                 <div class="col-md-12">
                     @if(session('status'))
