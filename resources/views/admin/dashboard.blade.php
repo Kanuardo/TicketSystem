@@ -6,6 +6,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="row">
+            {{ Breadcrumbs::render('admin') }}
             <div class="col-md-11 text-right">
 
                 <label>

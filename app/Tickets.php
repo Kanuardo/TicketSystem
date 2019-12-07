@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
+
 
 
 class Tickets extends Model

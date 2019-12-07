@@ -5,8 +5,12 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
+
             <h1>Просмотр тикета</h1>
+
+
         </section>
+    {{ Breadcrumbs::render('ticket') }}
 
         <!-- Main content -->
         <section class="content">
