@@ -20,6 +20,6 @@ class CommentsController extends Controller
         $comment->user_id= Auth::user()->id;
         $comment->save();
 
-        return redirect()->back()->with('status', 'Hа ваше письмо скоро ответят!');
+        return redirect()->back()->with('status', 'Ваше письмо отправлено!');
     }
 }

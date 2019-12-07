@@ -39,7 +39,7 @@ class HomeController extends Controller
 
        return view('pages.show',[
            'user'=>$user
-       ], compact('ticket'));   
+       ], compact('ticket'));
 
    }
    public function department($slug)

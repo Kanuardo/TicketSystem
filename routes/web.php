@@ -28,6 +28,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/logout', 'AuthController@logout');
     Route::post('/comment', 'CommentsController@store');
 
+
 });
 
 Route::group([ 'namespace'=>'Admin', 'middleware'=>'admin' ], function () {

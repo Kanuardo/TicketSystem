@@ -18,9 +18,11 @@ class DashboadController extends Controller
         $tickets = Tickets::paginate(3);
 
 
+
         return view("admin.dashboard", [
             'tickets'=> $tickets,
             'user' =>$user],
             compact('departments'));
     }
+
 }

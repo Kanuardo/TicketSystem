@@ -55,9 +55,7 @@
                                 <p style="text-align: right; width:50%;  display: inline-block;"> {{$ticket-> department-> title}} / {{$ticket-> data()}}</p>
                                 <div class="post-thumb">
 
-
-
-                                    <a href="{{route('admin.ticket.index', $ticket->slug)}}" class="post-thumb-overlay text-center">
+                                  <a href="{{route('admin.ticket.index', $ticket->slug)}}" class="post-thumb-overlay text-center">
 
                                     </a>
                                 </div>
@@ -65,7 +63,8 @@
                                     <header class="entry-header text-left text-uppercase">
 
 
-                                        <h1 class="entry-title"><a href="{{route('admin.ticket.index', $ticket->slug)}}">{{$ticket-> title}}</a></h1>
+                                        <h1 class="entry-title"><a href="{{route('admin.ticket.index',
+                                        $ticket->slug)}}">{{$ticket-> title}}</a></h1>
 
 
                                     </header>
@@ -89,7 +88,8 @@
                                             @endforeach @endif
 
                                         <div class="btn-continue-reading text-center text-uppercase">
-                                            <a href="{{route('admin.ticket.index', $ticket->slug)}}" class="more-link">Continue Reading</a>
+                                            <a href="{{route('admin.ticket.index', $ticket->slug)}}"
+                                               class="more-link">Continue Reading</a>
                                         </div>
                                     </div>
 

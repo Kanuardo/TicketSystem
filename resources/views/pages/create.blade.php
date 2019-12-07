@@ -9,7 +9,7 @@
         ])}}
             <!-- Default box -->
 
-                        <h3 class="box-title">Создание нового тикета</h3>
+            <h3 class="box-title">Создание нового тикета</h3>
             @include('admin.errors')
                     <div class="box-body">
                         <div class="col-md-6">
