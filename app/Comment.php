@@ -9,7 +9,7 @@ class Comment extends Model
 
     public function ticket ()
     {
-        return $this->belongsTo(Tickets::class)->orderBy('created_at','asc');;
+        return $this->belongsTo(Tickets::class);
     }
 
     public function author()

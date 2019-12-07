@@ -29,6 +29,7 @@ class Tickets extends Model
     {
         return $this->hasMany(Comment::class ,'ticket_id' );
     }
+
     public function comments3() {
         return $this->hasMany(Comment::class,'ticket_id')->limit(1)->orderBy('created_at','desc');
     }

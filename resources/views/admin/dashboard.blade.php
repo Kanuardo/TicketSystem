@@ -72,6 +72,21 @@
                                     <div class="entry-content">
                                         <p>{{$ticket->content}}
                                         </p>
+                                        @if(!$ticket-> comments->isEmpty())
+
+                                            @foreach($ticket->comments3->reverse() as $comment)
+
+                                                <div class="bottom-comment">
+
+                                                    <div class="comment-text">
+                                                        <h5>{{$comment->author->name}}</h5>
+                                                        <p class="comment-date">
+                                                            {{$comment->created_at-> diffForHumans()}}
+                                                        </p>
+                                                        <p class="para">{{$comment->title}}</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach @endif
 
                                         <div class="btn-continue-reading text-center text-uppercase">
                                             <a href="{{route('admin.ticket.index', $ticket->slug)}}" class="more-link">Continue Reading</a>

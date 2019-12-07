@@ -16,7 +16,8 @@ class HomeController extends Controller
 
        $departments = Department::pluck('title', 'id')->all();
        $user= Auth::user();
-       $tickets = Tickets::where( 'user_id', auth()->user()->id)->paginate(2);
+       $tickets = Tickets::where( 'user_id', auth()->user()->id)->paginate(5);
+
 
         return view("pages.index", [
         'tickets'=> $tickets,
@@ -38,7 +39,7 @@ class HomeController extends Controller
 
        return view('pages.show',[
            'user'=>$user
-       ], compact('ticket'));
+       ], compact('ticket'));   
 
    }
    public function department($slug)

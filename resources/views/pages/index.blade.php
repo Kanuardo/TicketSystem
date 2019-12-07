@@ -41,7 +41,7 @@
                             <div class="post-content">
                                      <header class="entry-header text-left text-uppercase">
 
-                                         <h1 class="entry-title"><a href="{{route('ticket.show', $ticket->slug)}}">{{$ticket-> title}}</a></h1>
+                                         <h1 class="entry-title"><a href="{{route('ticket.show', $ticket->slug)}}">{{$ticket->title}}</a></h1>
 
                                      </header>
 
@@ -85,4 +85,5 @@
             <!-- /.content -->
         </div>
     </div>
+
 @endsection
