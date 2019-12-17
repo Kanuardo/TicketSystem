@@ -37,6 +37,11 @@
 
             </div>
         </div>
+        @if(session('status'))
+            <div class="alert alert-success">
+                {{session('status')}}
+            </div>
+        @endif
     </section>
 
     <!-- Main content -->
@@ -87,10 +92,12 @@
                                                 </div>
                                             @endforeach @endif
 
-                                        <div class="btn-continue-reading text-center text-uppercase">
-                                            <a href="{{route('admin.ticket.index', $ticket->slug)}}"
-                                               class="more-link">Continue Reading</a>
-                                        </div>
+                                        @if($ticket->status==0)
+
+                                        <a href="/admin/status/update/{{$ticket->id}}"><button class="btn btn-success text-center" name="status" value="0">Закрыть тикет</button></a>
+                                    @else
+                                            <label class="bg-yellow">Tикет закрыт</label>
+                                            @endif
                                     </div>
 
 

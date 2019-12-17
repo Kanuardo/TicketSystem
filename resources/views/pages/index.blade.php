@@ -67,6 +67,9 @@
                                     <!-- /. latest comment -->
                                 </div>
                             </div>
+                            @if($ticket->status==1)
+                                <h3 class="red">Tикет закрыт</h3>
+                                @endif
 
                     </article>
                     @endforeach

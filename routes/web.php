@@ -33,8 +33,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group([ 'namespace'=>'Admin', 'middleware'=>'admin' ], function () {
     Route::get('/admin' , 'DashboadController@index')->name('admin');
+    Route::get('/admin/status/update/{id}', 'DashboadController@updateStatus');
     Route::get('/admin/ticket/{slug}', 'TicketController@index')->name('admin.ticket.index');
-    Route::get('/admin/departments/{slug}', 'TicketController@department')->name('admindepartment.show');
+    Route::get('/admin/department/{slug}', 'TicketController@department')->name('admindepartment.show');
     Route::resource('admin/departments', 'DepartmentsController');
     Route::resource('admin/users', 'UsersController');
 });

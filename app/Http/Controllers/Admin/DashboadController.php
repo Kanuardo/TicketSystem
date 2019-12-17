@@ -24,5 +24,12 @@ class DashboadController extends Controller
             'user' =>$user],
             compact('departments'));
     }
+public function updateStatus(Request $request, $id)
+{
+    $ticket = Tickets::where('id', $id)->firstOrFail();
+    $ticket->status= 1;
+    $ticket->save();
+    return redirect()->back()->with("status", "Тикет был закрыт.");
+}
 
 }

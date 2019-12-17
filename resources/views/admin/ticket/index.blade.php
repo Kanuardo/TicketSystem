@@ -65,7 +65,7 @@
 
                         <!-- end bottom comment-->
 
-
+                            @if($ticket->status==0)
                             <div class="leave-comment"><!--leave comment-->
                                 <h4>Oтправить ответ</h4>
                                 <form class="form-horizontal contact-form" role="form" method="post" action="/comment">
@@ -79,7 +79,7 @@
                                     </div>
                                     <button class="btn send-btn">Oтправить</button>
                                 </form>
-                            </div><!--end leave comment-->
+                            </div>@endif<!--end leave comment-->
                         </div>
 
                     </div>

@@ -20,19 +20,35 @@
                                 <div class="post-content">
                                     <header class="entry-header text-left text-uppercase">
 
-
                                         <h1 class="entry-title"><a href="{{route('ticket.show', $ticket->slug)}}">{{$ticket->title}}</a></h1>
 
-
                                     </header>
-                                    <div class="entry-content">
-                                        {!! $ticket->content !!}
 
-                                        <div class="social-share">
-                                            <span class="social-share-title pull-left text-capitalize">By Rubel On February 12, 2016</span>
-                                        </div>
+                                    <div class="entry-content">
+                                        <p>{{$ticket->content}}
+                                        </p>
+                                        <!-- latest comment -->
+                                        @if(!$ticket-> comments->isEmpty())
+
+                                            @foreach($ticket->comments3->reverse() as $comment)
+
+                                                <div class="bottom-comment">
+
+                                                    <div class="comment-text">
+                                                        <h5>{{$comment->author->name}}</h5>
+                                                        <p class="comment-date">
+                                                            {{$comment->created_at-> diffForHumans()}}
+                                                        </p>
+                                                        <p class="para">{{$comment->title}}</p>
+                                                    </div>
+                                                </div>
+                                        @endforeach @endif
+                                    <!-- /. latest comment -->
                                     </div>
                                 </div>
+                                @if($ticket->status==1)
+                                    <h3 class="red">Tикет закрыт</h3>
+                                @endif
 
                             </article>
                             @endforeach

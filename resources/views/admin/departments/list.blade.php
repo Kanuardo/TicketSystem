@@ -54,7 +54,7 @@
                                         <div class="post-thumb">
 
 
-                                            <a href="{{route('ticket.show', $ticket->slug)}}" class="post-thumb-overlay text-center">
+                                            <a href="{{route('admin.ticket.index', $ticket->slug)}}" class="post-thumb-overlay text-center">
 
                                             </a>
                                         </div>
@@ -62,17 +62,41 @@
                                             <header class="entry-header text-left text-uppercase">
 
 
-                                                <h1 class="entry-title"><a href="{{route('ticket.show', $ticket->slug)}}">{{$ticket->title}}</a></h1>
+                                                <h1 class="entry-title"><a href="{{route('admin.ticket.index',
+                                        $ticket->slug)}}">{{$ticket-> title}}</a></h1>
 
 
                                             </header>
                                             <div class="entry-content">
-                                                {!! $ticket->content !!}
+                                                <p>{{$ticket->content}}
+                                                </p>
+                                                @if(!$ticket-> comments->isEmpty())
 
-                                                <div class="social-share">
-                                                    <span class="social-share-title pull-left text-capitalize">By Rubel On February 12, 2016</span>
-                                                </div>
+                                                    @foreach($ticket->comments3->reverse() as $comment)
+
+                                                        <div class="bottom-comment">
+
+                                                            <div class="comment-text">
+                                                                <h5>{{$comment->author->name}}</h5>
+                                                                <p class="comment-date">
+                                                                    {{$comment->created_at-> diffForHumans()}}
+                                                                </p>
+                                                                <p class="para">{{$comment->title}}</p>
+                                                            </div>
+                                                        </div>
+                                                    @endforeach @endif
+
+                                                @if($ticket->status==0)
+
+                                                    <a href="/admin/status/update/{{$ticket->id}}"><button class="btn btn-success text-center" name="status" value="0">Закрыть тикет</button></a>
+                                                @else
+                                                    <label class="bg-yellow">Tикет закрыт</label>
+                                                @endif
                                             </div>
+
+
+
+
                                         </div>
 
                                     </article>
