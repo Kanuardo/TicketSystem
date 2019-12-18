@@ -13,9 +13,10 @@ Follow the steps below to quickly set up the application.
 7. Run `php artisan db:seed` to run all of the seeders.
 8. Run `php artisan serve`
 
-All passwords are: password
-Admin login: admin@mail.ru
-  Logins of users you can see in "Пользователи" sidebar.
+##Log in
+All passwords are: password.<br>
+Admin login: admin@mail.ru.<br>
+Logins of users you can see in "Пользователи" sidebar.
 
 
 
