@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\Auth;
 
 class DashboadController extends Controller
 {
-    public function index()
+
+    public function index(Request $request)
     {
         $departments = Department::pluck('title', 'id')->all();
         $user= Auth::user();
 
         $tickets = Tickets::paginate(3);
-
-
 
         return view("admin.dashboard", [
             'tickets'=> $tickets,

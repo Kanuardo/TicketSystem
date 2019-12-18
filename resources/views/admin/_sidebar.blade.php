@@ -1,6 +1,6 @@
 <!-- sidebar menu: : style can be found in sidebar.less -->
 <ul class="sidebar-menu">
-    <li class="header">MAIN NAVIGATION</li>
+    <li class="header">НАВИГАЦИЯ</li>
 
 
     <li><a href="{{route('departments.index')}}"><i class="fa fa-list-ul"></i> <span>Отделы</span></a></li>

@@ -36,7 +36,7 @@
         <!-- Logo -->
         <a href="/admin" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>Ti</b>cket</span>
+            <span class="logo-mini"><b>Ti</b>ckets</span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>Главная </b>страница</span>
         </a>
@@ -72,7 +72,7 @@
                             <li class="user-footer">
 
                                 <div class="pull-right">
-                                    <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="/logout" class="btn btn-default btn-flat">ВЫХОД</a>
                                 </div>
 
                             </li>

@@ -23,7 +23,7 @@ $factory->define(User::class, function (Faker $faker) {
 
 
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        'is_admin'=> 1,
+        'is_admin'=> 0,
         'remember_token' => Str::random(10),
     ];
 });
@@ -32,7 +32,7 @@ $factory->define(\App\Tickets::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'content' => $faker->sentence,
         'department_id' => $faker->numberBetween(1,3),
-        'user_id' => 1,
-        'status' => 1,
+        'user_id' => $faker->numberBetween($min = 2, $max = 4) ,
+        'status' => $faker->numberBetween($min = 0, $max = 1) ,
     ];
 });

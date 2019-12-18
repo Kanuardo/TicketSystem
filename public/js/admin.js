@@ -3091,7 +3091,7 @@ $(function() {
         $.ajax({
             type: "GET",
             dataType: "json",
-            url: 'changeStatus  ',
+            url: 'admin  ',
             data: {'status': status, 'id': id},
             success: function(data){
                 console.log(data.success)
